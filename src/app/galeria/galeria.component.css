@@ -1,0 +1,29 @@
+h1{
+
+  text-align: center;
+  margin: 50px;
+  border-bottom-style: solid;
+  border-bottom-color: coral;
+  margin-top: 80px;
+}
+
+
+.photo-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+}
+
+.photo-card mat-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

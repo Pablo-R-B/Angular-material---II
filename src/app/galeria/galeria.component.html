@@ -1,0 +1,29 @@
+<h1>Ejercicio 2: Galería de Imágenes Interactiva</h1>
+<div>
+<mat-form-field>
+  <mat-label>Buscar por descripción</mat-label>
+  <input matInput [(ngModel)]="filterDescription">
+</mat-form-field>
+
+<button mat-button (click)="addImage()">Añadir Imagen</button>
+
+
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-label>URL de la Imagen</mat-label>
+      <input matInput [(ngModel)]="newImage.url">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Descripción</mat-label>
+      <input matInput [(ngModel)]="newImage.description">
+    </mat-form-field>
+  </mat-dialog-content>
+</div>
+
+
+<mat-grid-list cols="3" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let image of filteredImages" (click)="openDialog(image)">
+    <img [src]="image.url" [alt]="image.description">
+    <mat-grid-tile-footer>{{ image.description }}</mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
